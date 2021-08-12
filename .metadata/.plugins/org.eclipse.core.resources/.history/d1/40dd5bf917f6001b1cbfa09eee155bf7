@@ -1,0 +1,58 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Conta;
+
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Conta conta = new Conta();
+		
+		System.out.print("Enter account number: ");
+		int accountNumber = sc.nextInt(); 
+		System.out.print("Enter account number: ");
+		sc.nextLine();
+		String accountHolder = sc.nextLine();
+		System.out.print("Is there an initial deposit (y/n)? ");
+		char initial = sc.next().charAt(0);
+		
+		
+		
+		if (initial == 'y') {
+			System.out.print("Enter initial deposit value: ");
+			double initialDeposit = sc.nextDouble(); 
+			conta = new Conta(numero, titular, saldoInicial);
+		}
+		else {
+			conta = new Conta(initial, accountHolder);
+	
+		}
+		
+		System.out.println();
+		System.out.println("Account data:");
+		System.out.println(conta);
+		
+		System.out.println();
+		System.out.print("Enter a deposit value: ");
+		double deposito = sc.nextDouble();
+		conta.deposito(deposito);
+		System.out.println("Updated account data: ");
+		System.out.println(conta);
+//		
+//		System.out.print("Enter a withdraw value: ");
+//		double saque = sc.nextDouble();
+//		System.out.println("Updated account data: ");
+//		System.out.printf("Account %d, Holder: %s, Balance: $ %.2f%n", accountNumber, accountHolder, Conta.getSaque());
+//		
+		sc.close();
+		
+	}
+
+}

@@ -1,0 +1,36 @@
+package entities;
+
+public class Company extends Individual {
+	private Integer nuberOfEmployees;
+	
+	public Company() {
+		super();
+	}
+
+	public Company(String name, Double anualIncome, Double healthExpenditures, Integer nuberOfEmployees) {
+		super(name, anualIncome, healthExpenditures);
+		this.nuberOfEmployees = nuberOfEmployees;
+	}
+
+	public Integer getNuberOfEmployees() {
+		return nuberOfEmployees;
+	}
+
+	public void setNuberOfEmployees(Integer nuberOfEmployees) {
+		this.nuberOfEmployees = nuberOfEmployees;
+	}
+	
+	@Override
+	public double tax() {
+		int emp = 0;
+		if (emp > 10) {
+			return getAnualIncome() * 1.14;					
+		}
+		else {
+			return getAnualIncome() * 1.16;
+		}
+		
+	}
+	
+
+}
